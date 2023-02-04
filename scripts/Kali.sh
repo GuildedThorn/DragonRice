@@ -12,6 +12,8 @@ ________                                    __________.__
 sudo apt update
 sudo apt upgrade
 
+sudo apt install arduino
+
 # Social Media
 if test -e /files/hexchat/OFTC.pem; then
   sudo apt install hexchat
@@ -88,6 +90,13 @@ if test -d /files/firmware; then
   sleep 3
   cp /files/firmware/BCM20702B0-19ff-0239.hcd /lib/firmware/brcm
 fi
+
+# Install Brave Browser
+sudo apt install apt-transport-https curl
+sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
+echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list]
+sudo apt update
+sudo apt install brave-browser
 
 # TODO: Pull and install either KDE theme or XFCE theme when its finished
 # TODO: Pull and install ThornShell when its finished

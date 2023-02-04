@@ -1,6 +1,8 @@
 #!/sbin/sh
 
 # Credit: https://www.kali.org/docs/nethunter/nethunter-rootless/#installation
+echo "Installing Nethunter rootless"
+sleep 3
 termux-setup-storage
 pkg install wget
 wget -O install-nethunter-termux https://offs.ec/2MceZWr
